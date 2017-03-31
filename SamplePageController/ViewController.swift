@@ -36,7 +36,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         print("swipeLeft")
         samplePageControl.currentPage += 1
         
-        UIView.transition(with: sampleImageView, duration: 0.5, options: .transitionCrossDissolve, animations: {
+        UIView.transition(with: sampleImageView, duration: 0.3, options: .transitionCrossDissolve, animations: {
             self.sampleImageView.image = UIImage(named: self.imageArray[self.samplePageControl.currentPage])
         }, completion: nil)
         
@@ -46,7 +46,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         print("swipeRight")
         samplePageControl.currentPage -= 1
         
-        UIView.transition(with: sampleImageView, duration: 0.5, options: .transitionCrossDissolve, animations: {
+        UIView.transition(with: sampleImageView, duration: 0.3, options: .transitionCrossDissolve, animations: {
             self.sampleImageView.image = UIImage(named: self.imageArray[self.samplePageControl.currentPage])
         }, completion: nil)
         
