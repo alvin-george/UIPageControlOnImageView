@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SamplePageController" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,86 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch" translatesAutoresizingMaskIntoConstraints="NO" id="nRi-3K-RVj">
+                                <rect key="frame" x="0.0" y="20" width="375" height="500.5"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="JXv-Nc-PYc" appends="YES" id="jeB-AS-Jz8"/>
+                                    <outletCollection property="gestureRecognizers" destination="Yve-PK-Pks" appends="YES" id="iVW-lm-qqc"/>
+                                </connections>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76e-qj-aHT">
+                                <rect key="frame" x="28.5" y="540.5" width="319" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="e2c-sK-zDR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Join Now"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xe6-IQ-dBH">
+                                <rect key="frame" x="28" y="600.5" width="319" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="6gi-Ac-Oc7"/>
+                                    <constraint firstAttribute="height" constant="40" id="WGD-qh-a4q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Sign In"/>
+                            </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="Qwu-de-BCA">
+                                <rect key="frame" x="75" y="480.5" width="225" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="U9V-lp-ewr"/>
+                                </constraints>
+                                <color key="pageIndicatorTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" red="0.85882352939999995" green="0.85882352939999995" blue="0.85882352939999995" alpha="0.98238146550000005" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Qwu-de-BCA" firstAttribute="bottom" secondItem="nRi-3K-RVj" secondAttribute="bottom" id="2P2-pL-HR8"/>
+                            <constraint firstItem="Qwu-de-BCA" firstAttribute="width" secondItem="nRi-3K-RVj" secondAttribute="width" multiplier="0.6" id="6Zi-GK-Xeq"/>
+                            <constraint firstItem="nRi-3K-RVj" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.75" id="Ccj-xF-l2v"/>
+                            <constraint firstAttribute="trailing" secondItem="nRi-3K-RVj" secondAttribute="trailing" id="L4b-Hh-HzH"/>
+                            <constraint firstItem="nRi-3K-RVj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Lvm-Qz-hlE"/>
+                            <constraint firstItem="76e-qj-aHT" firstAttribute="top" secondItem="nRi-3K-RVj" secondAttribute="bottom" constant="20" id="TgO-cz-IKU"/>
+                            <constraint firstItem="xe6-IQ-dBH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dpS-0L-8Y5"/>
+                            <constraint firstItem="76e-qj-aHT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="i7z-7c-oVA"/>
+                            <constraint firstItem="nRi-3K-RVj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="l52-MF-Kjt"/>
+                            <constraint firstItem="xe6-IQ-dBH" firstAttribute="top" secondItem="76e-qj-aHT" secondAttribute="bottom" constant="20" id="mN9-ew-Wd2"/>
+                            <constraint firstItem="xe6-IQ-dBH" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.85" id="qxe-Yc-zgl"/>
+                            <constraint firstItem="76e-qj-aHT" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.85" id="rmd-I3-o0w"/>
+                            <constraint firstItem="Qwu-de-BCA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tVy-RE-XAJ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="sampleImageView" destination="nRi-3K-RVj" id="qsk-cv-nbs"/>
+                        <outlet property="samplePageControl" destination="Qwu-de-BCA" id="BG9-Um-oaV"/>
+                        <outlet property="swipeLeft" destination="Yve-PK-Pks" id="wHT-JO-3FS"/>
+                        <outlet property="swipeRight" destination="JXv-Nc-PYc" id="Od9-7L-qL9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="JXv-Nc-PYc">
+                    <connections>
+                        <action selector="swipedToRight:" destination="BYZ-38-t0r" id="rDB-FY-5Dh"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="Wzg-aJ-cOo"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="Yve-PK-Pks">
+                    <connections>
+                        <action selector="swipedToLeft:" destination="BYZ-38-t0r" id="GHJ-oN-SX0"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="zn5-tj-ub0"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="launch" width="320" height="480"/>
+    </resources>
 </document>
